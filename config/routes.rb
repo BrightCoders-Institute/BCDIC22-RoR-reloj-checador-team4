@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   root 'admin#index'
   get '/home', to: 'home#index'
   get '/options', to: 'options#index'
+  get '/reports', to: 'reports#index'
 end
