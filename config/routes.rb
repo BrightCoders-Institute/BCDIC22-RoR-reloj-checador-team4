@@ -11,11 +11,11 @@ Rails.application.routes.draw do
 
   # definiendo rutas para los empleados
   get '/employees', to: 'user#index'
-  get '/employess/new', to: 'user#new'
-  post '/employess/new', to: 'user#create'
-  get '/employess/id', to: 'user#show'
-  get '/employess/id/edit', to: 'user#edit'
-  post '/employess/id/edit', to: 'user#update'
+  get '/employees/new', to: 'user#new'
+  post '/employees/new', to: 'user#create'
+  get '/employees/id', to: 'user#show'
+  get '/employees/id/edit', to: 'user#edit'
+  post '/employees/id/edit', to: 'user#update'
 
    # definiendo rutas para las compañias
    get '/company', to: 'company#index'
@@ -43,3 +43,5 @@ Rails.application.routes.draw do
 
 
 end
+
+#bin/rails generate controller Reports index --skip-routes
