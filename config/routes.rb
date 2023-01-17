@@ -2,45 +2,26 @@
 
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  
+  # De ahora en adelante, las urls serán '/check'
+  root 'check#index'
+  resources :check, only: [:create,:update]
 
-  # Defines the root path route ("/")
-  # root 'admin#index'
-  # get '/home', to: 'home#index'
-  # get '/options', to: 'options#index'
-  # get '/reports', to: 'reports#index'
+  # De ahora en adelante, las urls serán '/login'
+  resources :login, only: [:create,:new]
 
-  # definiendo rutas para los empleados
-  get '/employees', to: 'user#index'
-  get '/employees/new', to: 'user#new'
-  post '/employees/new', to: 'user#create'
-  get '/employees/id', to: 'user#show'
-  get '/employees/id/edit', to: 'user#edit'
-  post '/employees/id/edit', to: 'user#update'
+  # De ahora en adelante, las urls serán '/user'
+  resources :user 
 
-   # definiendo rutas para las compañias
-   get '/company', to: 'company#index'
-   get '/company/new', to: 'company#new'
-   post '/company/new', to: 'company#create'
-   get '/company/id', to: 'company#show'
-   get '/company/id/edit', to: 'company#edit'
-   post '/company/id/edit', to: 'company#update'
+   # De ahora en adelante, las urls serán '/company'
+   resources :company
 
-   # definiendo rutas para check
-   root 'check#index'
-   post '/check/create', to: 'check#create'
-   post '/check/id/edit', to: 'check#update'
-
-   # definiendo rutas para el login
-   get '/login', to: 'login#new'
-   post '/login', to: 'login#create'
-
-   # definiendo rutas para los reportes
-   get '/reports', to: 'reports#index'
-   get '/reports/month', to: 'reports#monthly'
-   get '/reports/day', to: 'reports#daily'
-   get '/reports/month/absence', to: 'reports#absenceMonth'
-   get '/reports/day/absence', to: 'reports#absenceDay'
-
+   # De ahora en adelante, las urls serán '/reports'
+   resources :reports, only: [:index]
+  get '/reports/month', to: 'reports#monthly'
+  get '/reports/day', to: 'reports#daily'
+  get '/reports/month/absence', to: 'reports#absenceMonth'
+  get '/reports/day/absence', to: 'reports#absenceDay'
 
 end
 
