@@ -13,16 +13,15 @@
  *= require_tree .
  *= require_self
  */ 
- @import 'rails_bootstrap_forms';
- @import 'bootstrap';
 
- @use 'abstracts/*';
- @use 'vendors/*';
- @use 'base/*';
- @use 'layout/*';
- @use 'components/*';
- @use 'pages/*';
- @use 'themes/*';
+  @import 'abstracts/*';
+  @import 'vendors/*';
+  @import 'base/*';
+  @import 'layout/*';
+  @import 'components/*';
+  @import 'pages/*';
+  @import 'themes/*';
 
-
+  @import 'rails_bootstrap_forms';
+  @import 'bootstrap';
 
