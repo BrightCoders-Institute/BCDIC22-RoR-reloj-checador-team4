@@ -1,25 +1,33 @@
 <main>
   <!-- This is the main container-->
-  <div>
-    <div>
-      <span>Company</span>
-    </div>
-    <br>
-    <div>
-      <div>
-        <a href="">
-          <img src="#" alt="boton-manage-employee">
-          <p>Manage Company</p>
-          <p>Create, read, update user and desactive the employee if he is not working</p>
-        </a>
+  <div class="container-fluid"> <%# class %>
+    <div class="col"> <%# left side %>
+      <div class="row"> <%# content L - R1%>
+        <h1>Manage Company Branches</h1>
+        <p>Create, read, update user and delete the stores of the company</p>
       </div>
-      <div>
-        <span>Register</span>
-        <span>Manage</span>
-        <span>Vacation</span>
-        <span>Employees</span>
-      </div>
-    </div>
-    <br>
-  </div>
+      <div class="row"> <%# content L - R2%>
+        <div class="clock">
+          <%# Perfil / Reloj %>
+        </div>
+      </div> <%# /content L%>
+    </div> <%# /left side %>
+
+    <div class="col"> <%# right side %>
+        <div> <%# content R%>
+          <h2>Lista de Empresas</h2>
+          <span>List Companies</span>
+          <span>Create Company</span>
+          
+          <ol>
+            <li>Tienda 1</li>
+            <li>Tienda 2</li>
+            <li>Tienda 3</li>
+            <li>Tienda 4</li>
+            <li>Tienda 5</li>
+          </ol>
+        </div> <%# /content %>
+    </div> <%# /right side R %>
+  </div> <%# /class %>
 </main>
+<%# left side %>
