@@ -2,22 +2,27 @@
   <!-- This is the main container-->
   <div class="container-fluid"> <%# class %>
     <div class="col"> <%# left side %>
-      <div class="row"> <%# content L - R1%>
-        <h1>Manage Company Branches</h1>
-        <p>Create, read, update user and delete the stores of the company</p>
-      </div>
-      <div class="row"> <%# content L - R2%>
-        <div class="clock">
-          <%# Perfil / Reloj %>
-        </div>
-      </div> <%# /content L%>
+      <%= render 'nav' %>
     </div> <%# /left side %>
 
     <div class="col"> <%# right side %>
         <div> <%# content R%>
-          <h2>Lista de Empresas</h2>
-          <span>List Companies</span>
-          <span>Create Company</span>
+          <h2>Companies List</h2>
+          <span><%= link_to "List of Companies", "/company/" %></span>
+          <span><%= link_to "Create Company", "/company/new" %></span>
+          <%= form_with model: @company do |form|  %>
+            <div>
+              <%= form.label :Name %><br>
+              <%= form.text_field :title, placeholder: "Current Name" %>
+            </div>
+            <div>
+              <%= form.label :Address %><br>
+              <%= form.text_field :body, placeholder: "Current Address" %>
+            </div>
+            <div>
+              <%= form.submit %>
+            </div>
+          <% end %>
         </div> <%# /content %>
     </div> <%# /right side R %>
   </div> <%# /class %>

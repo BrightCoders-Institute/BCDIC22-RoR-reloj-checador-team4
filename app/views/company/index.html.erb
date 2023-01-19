@@ -2,29 +2,21 @@
   <!-- This is the main container-->
   <div class="container-fluid"> <%# class %>
     <div class="col"> <%# left side %>
-      <div class="row"> <%# content L - R1%>
-        <h1>Manage Company Branches</h1>
-        <p>Create, read, update user and delete the stores of the company</p>
-      </div>
-      <div class="row"> <%# content L - R2%>
-        <div class="clock">
-          <%# Perfil / Reloj %>
-        </div>
-      </div> <%# /content L%>
+      <%= render 'nav' %>
     </div> <%# /left side %>
 
     <div class="col"> <%# right side %>
         <div> <%# content R%>
-          <h2>Lista de Empresas</h2>
-          <span>List Companies</span>
-          <span>Create Company</span>
-          
+          <h2>Companies List</h2>
+          <span>List of Companies</span>
+          <span><%= link_to "Create Company", "/company/new" %></span>
+
           <ol>
-            <li>Tienda 1</li>
-            <li>Tienda 2</li>
-            <li>Tienda 3</li>
-            <li>Tienda 4</li>
-            <li>Tienda 5</li>
+            <li>Tienda 1 <%= link_to " Edit", "/company/1/edit" %></li>
+            <li>Tienda 2 <%= link_to " Edit", "/company/2/edit" %></li>
+            <li>Tienda 3 <%= link_to " Edit", "/company/3/edit" %></li>
+            <li>Tienda 4 <%= link_to " Edit", "/company/4/edit" %></li>
+            <li>Tienda 5 <%= link_to " Edit", "/company/5/edit" %></li>
           </ol>
         </div> <%# /content %>
     </div> <%# /right side R %>

@@ -2,40 +2,28 @@
   <!-- This is the main container-->
   <div class="container-fluid"> <%# class %>
     <div class="col"> <%# left side %>
-      <div class="row"> <%# content L - R1%>
-        <h1>Manage Company Branches</h1>
-        <p>Create, read, update user and delete the stores of the company</p>
-      </div>
-      <div class="row"> <%# content L - R2%>
-        <div class="clock">
-          <%# Perfil / Reloj %>
-        </div>
-      </div> <%# /content L%>
+      <%= render 'nav' %>
     </div> <%# /left side %>
 
     <div class="col"> <%# right side %>
         <div> <%# content R%>
-          <h2>Lista de Empresas</h2>
-          <span>List Companies</span>
+          <h2>Companies List</h2>
+          <span><%= link_to "List of Companies", "/company/" %></span>
           <span>Create Company</span>
-          <form action="/articles" accept-charset="UTF-8" method="post">
-            <input type="hidden" name="authenticity_token" value="...">
-
+        <%= form_with model: @company do |form|  %>
             <div>
-              <label for="article_title">Title</label><br>
-              <input type="text" name="article[title]" id="article_title">
+              <%= form.label :Name %><br>
+              <%= form.text_field :title, placeholder: "Company's Name" %>
             </div>
-
             <div>
-              <label for="article_body">Body</label><br>
-              <textarea name="article[body]" id="article_body"></textarea>
+              <%= form.label :Address %><br>
+              <%= form.text_field :body, placeholder: "Company's Address"%>
             </div>
-
             <div>
-              <input type="submit" name="commit" value="Create Article" data-disable-with="Create Article">
+              <%= form.submit %>
             </div>
-          </form>
-        </div> <%# /content %>
-    </div> <%# /right side R %>
-  </div> <%# /class %>
+          <% end %>
+            </div> <%# /content %>
+        </div> <%# /right side R %>
+      </div> <%# /class %>
 </main>
