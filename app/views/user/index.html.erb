@@ -1,10 +1,7 @@
 <h1>Employees</h1>
 <div>
   <div>
-  <nav>
-    <a href="/user">Index Employess</a>
-    <a href="/user/new">Create Employess</a>
-  </nav>
+    <%= render "nav"%>
   </div>
   
   <div>
@@ -13,7 +10,7 @@
       <p>name</p>
       <p>number employee</p>
       <p>company</p>
-      <p>edit</p>
+      <%= link_to "Edit Employee", "/user/update" %>
       <p>sleep</p>
     </div>
   </div>

@@ -1,0 +1,20 @@
+<%= form_with model: @check do |form| %>
+  <div></div>
+    <%= form.label :employee_id %><br>
+    <%= form.text_field :employeeid%>
+  </div>
+
+  <div>
+    <%= form.label :password %><br>
+    <%= form.password_field :password%>
+  </div>
+
+  <div>
+    <%= form.radio_button :check, 1 %> Checkin
+    <%= form.radio_button :check, 2 %> Checkout
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

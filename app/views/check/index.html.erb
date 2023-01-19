@@ -9,21 +9,13 @@
         <span id='min'></span><span class='red-dot'>:</span>
         <span id='second'></span>
       </div>
+      <span id='titulo'></span>
     </div>
     <div>
       <h1>Clock Checker</h1>
-      <form action="">
-        <div>
-          <label for="">Employee ID</label>
-          <input type="number">
-        </div>
-        <div>
-          <label for="">Password</label>
-          <input type="password">
-        </div>
-        <button type="submit">Check In</button>
-        <button type="submit">Check Out</button>
-      </form>
+      <div>
+        <%= render "form", check: @check %>
+      </div>
     </div>
   </div>
 </main>

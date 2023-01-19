@@ -1,48 +1,10 @@
 <h1>New Employee</h1>
 <div>
   <div>
-  <nav>
-    <a href="/user">Index Employess</a>
-    <a href="/user/new">Create Employess</a>
-  </nav>
+    <%= render "nav"%>
   </div>
   
   <div>
-    <%= form_with model: @user do |form| %>
-    <div></div>
-      <%= form.label :name %><br>
-      <%= form.text_field :name %>
-    </div>
-
-    <div>
-      <%= form.label :email %><br>
-      <%= form.text_field :email %>
-    </div>
-
-    <div></div>
-      <%= form.label :position %><br>
-      <%= form.select :position, ['option1', 'option2']%>
-    </div>
-
-    <div>
-        <%= form.label :number_employee %><br>
-        <%= form.number_field :number_employee, step: 1 %>
-    </div>
-
-    <div>
-        <%= form.label :number_private %><br>
-        <%= form.password_field  :number_private%>
-    </div>
-
-    <div>
-      <%= form.label :company %><br>
-      <%= form.select :company, ['option1', 'option2']%>
-    </div>
-
-    <div>
-      <%= form.submit %>
-    </div>
-  <% end %>
-
+  <%= render "form", user: @user %>
   </div>
 </div>
