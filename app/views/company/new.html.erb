@@ -6,24 +6,12 @@
     </div> <%# /left side %>
 
     <div class="col"> <%# right side %>
-        <div> <%# content R%>
-          <h2>Companies List</h2>
-          <span><%= link_to "List of Companies", "/company/" %></span>
-          <span>Create Company</span>
-        <%= form_with model: @company do |form|  %>
-            <div>
-              <%= form.label :Name %><br>
-              <%= form.text_field :title, placeholder: "Company's Name" %>
-            </div>
-            <div>
-              <%= form.label :Address %><br>
-              <%= form.text_field :body, placeholder: "Company's Address"%>
-            </div>
-            <div>
-              <%= form.submit %>
-            </div>
-          <% end %>
-            </div> <%# /content %>
-        </div> <%# /right side R %>
-      </div> <%# /class %>
+      <div> <%# content R%>
+        <h2>Companies List</h2>
+        <span><%= link_to "List of Companies", "/company/" %></span>
+        <span>Create Company</span>
+        <%= render 'form1', company: @company %>
+      </div> <%# /content %>
+    </div> <%# /right side R %>
+  </div> <%# /class %>
 </main>

@@ -1,0 +1,13 @@
+<%= form_with model: @company do |form|  %>
+  <div>
+    <%= form.label :Name %><br>
+    <%= form.text_field :title, placeholder: "Company's Name" %>
+  </div>
+  <div>
+    <%= form.label :Address %><br>
+    <%= form.text_field :body, placeholder: "Company's Address"%>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
