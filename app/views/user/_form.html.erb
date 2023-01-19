@@ -1,5 +1,5 @@
 <%= form_with model: @user do |form| %>
-  <div></div>
+  <div>
     <%= form.label :name %><br>
     <%= form.text_field :name %>
   </div>
@@ -15,13 +15,13 @@
   </div>
 
   <div>
-      <%= form.label :number_employee %><br>
-      <%= form.number_field :number_employee, step: 1 %>
+    <%= form.label :number_employee %><br>
+    <%= form.number_field :number_employee, step: 1 %>
   </div>
 
   <div>
-      <%= form.label :number_private %><br>
-      <%= form.password_field  :number_private%>
+    <%= form.label :number_private %><br>
+    <%= form.password_field  :number_private%>
   </div>
 
   <div>
