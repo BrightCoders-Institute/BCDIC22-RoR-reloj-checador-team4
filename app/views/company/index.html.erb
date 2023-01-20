@@ -1,23 +1,25 @@
-<main>
-  <!-- This is the main container-->
-  <div class="container-fluid"> <%# class %>
-    <div class="col"> <%# left side %>
-      <%= render 'nav' %>
-    </div> <%# /left side %>
-    <div class="col"> <%# right side %>
-        <div> <%# content R%>
-          <h2>Companies List</h2>
-          <span>List of Companies</span>
-          <span><%= link_to "Create Company", "/company/new" %></span>
-          <ol>
-            <li>Tienda 1 <%= link_to " Edit", "/company/1/edit" %></li>
-            <li>Tienda 2 <%= link_to " Edit", "/company/2/edit" %></li>
-            <li>Tienda 3 <%= link_to " Edit", "/company/3/edit" %></li>
-            <li>Tienda 4 <%= link_to " Edit", "/company/4/edit" %></li>
-            <li>Tienda 5 <%= link_to " Edit", "/company/5/edit" %></li>
-          </ol>
-        </div> <%# /content %>
-    </div> <%# /right side R %>
-  </div> <%# /class %>
+<main class="container-xl min-height-main">
+  <div>
+    <%= render 'nav' %>
+  </div>
+  <div>
+    <%= link_to "Create Company", "/company/new", class: 'bg-primary text-white text-decoration-none p-2 my-4 mx-auto' %>
+    <table class="w-100 text-center mt-4 border">
+      <tr class="border">
+        <th>ID</th>
+        <th>NAME</th>
+        <th>ADDRESS</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+      </tr>
+      
+      <tr>
+        <td>1</td>
+        <td>nombre</td>
+        <td>direccion</td>
+        <td><%= link_to "Edit", "/company/1/edit", class: 'text-decoration-none' %></td>
+        <td><%= link_to "Delete", "/company/1", class: 'text-decoration-none' %></td>
+      </tr>
+    </table>
+  </div>
 </main>
-<%# left side %>

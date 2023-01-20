@@ -1,17 +1,10 @@
-<main>
-  <!-- This is the main container-->
-  <div class="container-fluid"> <%# class %>
-    <div class="col"> <%# left side %>
-      <%= render 'nav' %>
-    </div> <%# /left side %>
-
-    <div class="col"> <%# right side %>
-      <div> <%# content R%>
-        <h2>Companies List</h2>
-        <span><%= link_to "List of Companies", "/company/" %></span>
-        <span>Create Company</span>
-        <%= render 'form', company: @company %>
-      </div> <%# /content %>
-    </div> <%# /right side R %>
-  </div> <%# /class %>
+<main class="container-xl">
+  <h1 class="text-center my-3">Create Company</h1>
+  <p class="text-center">Create a new company typing in the input's form.</p>
+  <%= link_to "Return", "/company/", class: "btn btn-primary p-2 roundend" %>
+  <div class="row min-height-main align-items-center">
+    <div class="col-md-4 offset-4 border bg-primary">
+      <%= render 'form', company: @company %>
+    </div>
+  </div>
 </main>

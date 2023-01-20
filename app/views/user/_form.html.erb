@@ -1,29 +1,35 @@
 <%= form_with model: @user do |form| %>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="my-3 d-flex flex-column">
+    <%= form.label :name, class: 'form-label' %><br>
+    <%= form.text_field :name, class: 'form-control' %>
   </div>
-  <div>
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+
+  <div class="my-3 d-flex flex-column">
+    <%= form.label :email, class: 'form-label' %><br>
+    <%= form.text_field :email, class: 'form-control' %>
   </div>
-  <div>
-    <%= form.label :position %>
-    <%= form.select :position, ['option1', 'option2']%>
+
+  <div class="my-3 d-flex flex-column">
+    <%= form.label :position, class: 'form-label' %><br>
+    <%= form.select :position, ['option1', 'option2'], class: 'form-control'%>
   </div>
-  <div>
-    <%= form.label :number_employee %>
-    <%= form.number_field :number_employee, step: 1 %>
+
+  <div class="my-3 d-flex flex-column">
+    <%= form.label :number_employee, class: 'form-label' %><br>
+    <%= form.number_field :number_employee, step: 1, class: 'form-control' %>
   </div>
-  <div>
-    <%= form.label :number_private %>
-    <%= form.password_field  :number_private%>
+
+  <div class="my-3 d-flex flex-column">
+    <%= form.label :number_private, class: 'form-label' %><br>
+    <%= form.password_field  :number_private, class: 'form-control'%>
   </div>
-  <div>
-    <%= form.label :company %>
-    <%= form.select :company, ['option1', 'option2']%>
+
+  <div class="my-3 d-flex flex-column">
+    <%= form.label :company, class: 'form-label' %><br>
+    <%= form.select :company, ['option1', 'option2'], class: 'form-control'%>
   </div>
-  <div>
-    <%= form.submit %>
+
+  <div class="my-3 d-flex flex-column">
+    <%= form.submit class: 'btn btn-secondary fs-5'%>
   </div>
 <% end %>
