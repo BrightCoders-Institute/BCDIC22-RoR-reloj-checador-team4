@@ -1,2 +1,17 @@
-<h1>Company#new</h1>
-<p>Find me in app/views/company/new.html.erb</p>
+<main>
+  <!-- This is the main container-->
+  <div class="container-fluid"> <%# class %>
+    <div class="col"> <%# left side %>
+      <%= render 'nav' %>
+    </div> <%# /left side %>
+
+    <div class="col"> <%# right side %>
+      <div> <%# content R%>
+        <h2>Companies List</h2>
+        <span><%= link_to "List of Companies", "/company/" %></span>
+        <span>Create Company</span>
+        <%= render 'form', company: @company %>
+      </div> <%# /content %>
+    </div> <%# /right side R %>
+  </div> <%# /class %>
+</main>

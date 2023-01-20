@@ -1,32 +1,19 @@
-<header>
-    <!-- This is the header container-->
-    <div>
-        <img src="#" alt="logotipo">
-        <button>Logout</button>
-    </div>
-</header>
 <main>
-    <!-- This is the main container-->
-    <div>
-      <h1>
-        Admin Portal
-      </h1>
-      <a href="">
-        <img src="#" alt="boton-manage-employee">
-        <p>Manage Employees and Comany Branches</p>
-        <p>Create, read, update user and desactive the employee if he is not working</p>
-      </a>
-      <a href="">
-        <img src="#" alt="boton-reports">
-        <p>Reports</p>
-        <p>The attendance per day, average time employees checked in/out by month.</p>
-      </a>
-    </div>
+  <!-- This is the main container-->
+  <div>
+    <h1>
+      Admin Portal
+    </h1>
+      <img src="#" alt="btn-manage-employee">
+      <p><%= link_to "Manage Employees", "/user" %></p>
+      <p>Create, read, update user and desactive the employee if he is not working</p>
+
+      <img src="#" alt="btn-reports">
+      <p>Reports</p>
+      <p>The attendance per day, average time employees checked in/out by month.</p>
+
+      <img src="#" alt="btn-manage-company">
+      <p><%= link_to "Manage Company Branches", "/company" %></p>
+      <p>Create, read, update store and delete the stores of the company.</p>
+  </div>
 </main>
-<footer>
-    <!-- This is the footer container-->
-    <div>
-        <p>Equipo 4RoR</p>
-        <p>Copyrigth 2023</p>
-    </div>
-</footer>

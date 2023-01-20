@@ -1,2 +1,23 @@
-<h1>Company#index</h1>
-<p>Find me in app/views/company/index.html.erb</p>
+<main>
+  <!-- This is the main container-->
+  <div class="container-fluid"> <%# class %>
+    <div class="col"> <%# left side %>
+      <%= render 'nav' %>
+    </div> <%# /left side %>
+    <div class="col"> <%# right side %>
+        <div> <%# content R%>
+          <h2>Companies List</h2>
+          <span>List of Companies</span>
+          <span><%= link_to "Create Company", "/company/new" %></span>
+          <ol>
+            <li>Tienda 1 <%= link_to " Edit", "/company/1/edit" %></li>
+            <li>Tienda 2 <%= link_to " Edit", "/company/2/edit" %></li>
+            <li>Tienda 3 <%= link_to " Edit", "/company/3/edit" %></li>
+            <li>Tienda 4 <%= link_to " Edit", "/company/4/edit" %></li>
+            <li>Tienda 5 <%= link_to " Edit", "/company/5/edit" %></li>
+          </ol>
+        </div> <%# /content %>
+    </div> <%# /right side R %>
+  </div> <%# /class %>
+</main>
+<%# left side %>

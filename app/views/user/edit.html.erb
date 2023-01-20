@@ -1,2 +1,13 @@
-<h1>User#edit</h1>
-<p>Find me in app/views/user/edit.html.erb</p>
+<h1>Edit Employee</h1>
+<div>
+  <div>
+    <nav>
+      <a href="/user">Index Employess</a>
+      <a href="/user/new">Create Employess</a>
+    </nav>
+  </div>
+  
+  <div>
+    <%= render "form", user: @user %>
+  </div>
+</div>

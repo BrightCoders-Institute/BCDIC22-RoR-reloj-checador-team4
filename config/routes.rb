@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   # De ahora en adelante, las urls serán '/login'
   resources :login, only: [:create,:new]
 
+  # De ahora en adelante, las urls serán '/home'
+  resources :home, only: [:index]
+
   # De ahora en adelante, las urls serán '/user'
   resources :user 
 

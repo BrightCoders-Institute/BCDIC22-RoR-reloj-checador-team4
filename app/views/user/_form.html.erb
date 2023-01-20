@@ -1,0 +1,29 @@
+<%= form_with model: @user do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+  <div>
+    <%= form.label :position %>
+    <%= form.select :position, ['option1', 'option2']%>
+  </div>
+  <div>
+    <%= form.label :number_employee %>
+    <%= form.number_field :number_employee, step: 1 %>
+  </div>
+  <div>
+    <%= form.label :number_private %>
+    <%= form.password_field  :number_private%>
+  </div>
+  <div>
+    <%= form.label :company %>
+    <%= form.select :company, ['option1', 'option2']%>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
