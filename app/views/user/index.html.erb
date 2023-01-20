@@ -1,17 +1,25 @@
-<h1>Employees</h1>
-<div>
-  <div>
-    <%= render "nav"%>
+<main class="container-xl min-height-main">
+  <div class="my-3">
+    <%= render 'nav' %>
   </div>
-  
   <div>
-    <div>
-      <p>id</p>
-      <p>name</p>
-      <p>number employee</p>
-      <p>company</p>
-      <%= link_to "Edit Employee", "/user/update" %>
-      <p>sleep</p>
-    </div>
+    <%= link_to "Create user", "/user/new", class: 'bg-primary text-white text-decoration-none p-2 my-4 mx-auto' %>
+    <table class="w-100 text-center mt-4 border">
+      <tr class="border">
+        <th>ID</th>
+        <th>NAME</th>
+        <th>ADDRESS</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+      </tr>
+      
+      <tr>
+        <td>1</td>
+        <td>nombre</td>
+        <td>direccion</td>
+        <td><%= link_to "Edit", "/user/1/edit", class: 'text-decoration-none' %></td>
+        <td><%= link_to "Delete", "/user/1", class: 'text-decoration-none' %></td>
+      </tr>
+    </table>
   </div>
-</div>
+</main>

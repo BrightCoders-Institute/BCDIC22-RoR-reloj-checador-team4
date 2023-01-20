@@ -11,22 +11,24 @@
   </head>
 
   <body>
-    <header>
-      <!-- This is the header container-->
-      <div>
-        <img src="#" alt="Logotipo">
-        <button>Logout</button>
+    <header class="bg-primary p-3 d-flex">
+      <div class="d-flex justify-content-between align-items-center container-xl">
+        <a class="text-dark" href="">
+          <%= image_tag("", alt: "admin image", class: 'rounded') %>
+        </a>
+        <a class="bg-danger text-white text-decoration-none p-2 rounded" href="/login/new">Login</a>
       </div>
+      <br>
     </header>
 
-    <%= yield %>
+      <%= yield %>
 
-    <footer>
-      <!-- This is the footer container-->
-      <div>
-        <p>Equipo 4 RoR</p>
-        <p>Copyrigth 2023</p>
-      </div>
+    <footer class="bg-primary p-2 d-flex">
+        <!-- This is the footer container-->
+        <div class="d-flex justify-content-between align-items-center container-xl">
+          <div class="fw-bold">Equipo 4 RoR</div>
+          <div class="fw-bold">Copyright 2023</div>
+        </div>
     </footer>
   </body>
 </html>
