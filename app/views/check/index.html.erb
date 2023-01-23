@@ -1,8 +1,6 @@
-<main class="container-xl">
-  <div class="row min-height-main align-items-center">
-    <div class="col-md-6">
-      <!-- Recovered from "https://codepen.io/Ladd_W/pen/JjPNBQm" -->
-      <div class="bg-secondary text-white display-1 p-3 rounded text-center">
+<main class="main-container bg-first">
+  <div class="m-auto">
+      <div class="text-dark bg-light display-1 p-3 rounded text-center shadow">
         <span class="" id='hour'></span>
         <span class='red-dot'>:</span>
         <span id='min'></span><span class='red-dot'>:</span>
@@ -10,9 +8,9 @@
       </div>
       <span id='titulo'></span>
     </div>
-    <div class="col-md-6 h-100">
-      <h1 class="display-3 text-center fw-bold">Clock Checker</h1>
-      <div class="bg-primary p-4 rounded">
+    <div class="mx-5 m-md-auto py-5 py-md-0">
+      <div class="p-4 rounded shadow bg-light align-items-center ">
+        <h1 class="display-3 text-center fw-bold">Clock Checker</h1>
         <%= render "form", check: @check %>
       </div>
     </div>

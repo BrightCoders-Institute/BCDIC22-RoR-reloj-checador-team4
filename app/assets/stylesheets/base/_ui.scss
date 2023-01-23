@@ -1,0 +1,18 @@
+.main-container{
+  @include media-breakpoint-up(md){
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+  }
+}
+
+.header-container, .footer-container{
+  height: 7vh;
+}
+
+.bg-first{
+  background-color: #e2e2e0;
+  @include media-breakpoint-up(md){
+    height: 86vh;
+  }
+}
