@@ -11,22 +11,22 @@
   </head>
 
   <body>
-    <header class="bg-primary p-3 d-flex">
+    <header class="bg-dark p-3 d-flex text-light header-container">
       <div class="d-flex justify-content-between align-items-center container-xl">
         <a class="text-dark" href="">
-          <%= image_tag("", alt: "admin image", class: 'rounded') %>
+          <%= image_tag("logo.png", alt: "admin image", class: 'rounded logo') %>
         </a>
-        <a class="bg-danger text-white text-decoration-none p-2 rounded" href="/login/new">Login</a>
+        <a class="btn btn-outline-light" href="/login/new">Login</a>
       </div>
       <br>
     </header>
 
       <%= yield %>
 
-    <footer class="bg-primary p-2 d-flex">
+    <footer class="p-2 d-flex text-light bg-dark fixed-bottom footer-container">
         <!-- This is the footer container-->
         <div class="d-flex justify-content-between align-items-center container-xl">
-          <div class="fw-bold">Equipo 4 RoR</div>
+          <div class="fw-bold">Team 4 RoR</div>
           <div class="fw-bold">Copyright 2023</div>
         </div>
     </footer>
