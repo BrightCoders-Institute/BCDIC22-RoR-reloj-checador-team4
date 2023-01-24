@@ -1,10 +1,13 @@
-<main class="container-xl min-height-main">
-  <div>
-    <%= render 'nav' %>
-  </div>
-  <div>
-    <%= link_to "Create Company", "/company/new", class: 'bg-primary text-white text-decoration-none p-2 my-4 mx-auto' %>
-    <table class="w-100 text-center mt-4 border">
+<main class="bg-first">
+  <div class="container-xl">
+    <div class="text-center pt-4">
+      <h1>Manage Companies</h1>
+      <p>Create, read, update and delete companies.</p>
+    </div>
+
+    <div>
+      <%= link_to "Create company", "/company/new", class: 'bg-secondary text-white text-decoration-none p-2 my-4 mx-auto rounded' %>
+      <table class="w-100 text-center mt-4 border">
       <tr class="border">
         <th>ID</th>
         <th>NAME</th>
@@ -21,5 +24,6 @@
         <td><%= link_to "Delete", "/company/1", class: 'text-decoration-none' %></td>
       </tr>
     </table>
+    </div>
   </div>
 </main>

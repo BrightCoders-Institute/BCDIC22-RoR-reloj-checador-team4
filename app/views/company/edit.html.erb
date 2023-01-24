@@ -1,9 +1,11 @@
-<main class="container-xl">
-  <h1 class="text-center my-3">Edit Company</h1>
-  <p class="text-center">Edit company typing in the input's form.</p>
-  <%= link_to "Return", "/company/", class: "btn btn-primary p-2 roundend" %>
-  <div class="row min-height-main align-items-center">
-    <div class="col-md-4 offset-4 border bg-primary">
+<main class="bg-first">
+  <div class="main-container container-xl h-100">
+    <div class="d-flex flex-column justify-content-center align-items-center m-auto">
+      <h1 class="text-center my-3">Edit Company</h1>
+      <p class="text-center">Edit company typing in the input's form.</p>
+      <%= link_to "Return", "/company/", class: "btn btn-primary p-2 roundend" %>
+    </div>
+    <div class="m-auto">
       <%= render 'form', company: @company %>
     </div>
   </div>

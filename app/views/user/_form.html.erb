@@ -1,32 +1,32 @@
-<%= form_with model: @user do |form| %>
-  <div class="my-3 d-flex flex-column">
+<%= form_with class: 'row bg-primary rounded m-4 mx-md-0', model: @user do |form| %>
+  <div class="my-3 d-flex flex-column col-md-6">
     <%= form.label :name, class: 'form-label' %><br>
     <%= form.text_field :name, class: 'form-control' %>
   </div>
 
-  <div class="my-3 d-flex flex-column">
+  <div class="my-3 d-flex flex-column col-md-6">
     <%= form.label :email, class: 'form-label' %><br>
-    <%= form.text_field :email, class: 'form-control' %>
+    <%= form.email_field :email, class: 'form-control' %>
   </div>
 
-  <div class="my-3 d-flex flex-column">
+  <div class="my-3 d-flex flex-column col-md-6">
     <%= form.label :position, class: 'form-label' %><br>
-    <%= form.select :position, ['option1', 'option2'], class: 'form-control'%>
+    <%= form.text_field :position, class: 'form-control' %>
   </div>
 
-  <div class="my-3 d-flex flex-column">
-    <%= form.label :number_employee, class: 'form-label' %><br>
-    <%= form.number_field :number_employee, step: 1, class: 'form-control' %>
+  <div class="my-3 d-flex flex-column col-md-6">
+    <%= form.label :emp_num, class: 'form-label' %><br>
+    <%= form.number_field :emp_num, step: 1, class: 'form-control' %>
   </div>
 
-  <div class="my-3 d-flex flex-column">
-    <%= form.label :number_private, class: 'form-label' %><br>
-    <%= form.password_field  :number_private, class: 'form-control'%>
+  <div class="my-3 d-flex flex-column col-md-6">
+    <%= form.label :private_num, class: 'form-label' %><br>
+    <%= form.password_field :private_num, step: 1, class: 'form-control' %>
   </div>
 
-  <div class="my-3 d-flex flex-column">
-    <%= form.label :company, class: 'form-label' %><br>
-    <%= form.select :company, ['option1', 'option2'], class: 'form-control'%>
+  <div class="my-3 d-flex flex-column col-md-6">
+    <%= form.label :company_id, class: 'form-label' %><br>
+    <%= form.text_field :position, class: 'form-control' %>
   </div>
 
   <div class="my-3 d-flex flex-column">
