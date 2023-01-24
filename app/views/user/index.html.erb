@@ -5,34 +5,35 @@
       <p>Create, read, update user and sleep employee</p>
     </div>
 
-    <div>
-      <%= link_to "Create user", "/user/new", class: 'bg-secondary text-white text-decoration-none p-2 my-4 mx-auto rounded' %>
-      <table class="w-100 text-center mt-4 border">
-        <tr class="border">
-          <th>ID</th>
-          <th>NAME</th>
-          <th>EMAIL</th>
-          <th>POSITION</th>
-          <th>EMPLOYEE NUMBER</th>
-          <th>PRIVATE NUMBER</th>
-          <th>COMPANY</th>
-          <th>EDIT</th>
-          <th>SLEEP</th>
-        </tr>
-        
-        <tr>
-          <td>id</td>
-          <td>name</td>
-          <td>email</td>
-          <td>position</td>
-          <td>emp_num</td>
-          <td>private_num</td>
-          <td>company.name</td>
-          <td><%= link_to "Edit", "/user/1/edit", class: 'text-decoration-none' %></td>
-          <td><%= link_to "Delete", "/user/1", class: 'text-decoration-none' %></td>
-        </tr>
-
-      </table>
+    <div class = "">
+      <%= link_to "Create user", "/user/new", class: 'btn btn-outline-dark shadow my-3' %>
+      <div class = "table-responsive shadow" >
+        <table class="table border-bottom border-dark w-100 text-center mt-4 table-hover">
+          <tr class="">
+            <th class = "">ID</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>POSITION</th>
+            <th>EMPLOYEE NUMBER</th>
+            <th>PRIVATE NUMBER</th>
+            <th>COMPANY</th>
+            <th>EDIT</th>
+            <th>SLEEP</th>
+          </tr>
+          
+          <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>email</td>
+            <td>position</td>
+            <td>emp_num</td>
+            <td>private_num</td>
+            <td>company.name</td>
+            <td><%= link_to "Edit", "/user/1/edit", class: 'btn btn-outline-dark' %></td>
+            <td><%= link_to "Delete", "/user/1", class: 'btn btn-outline-dark' %></td>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
 </main>

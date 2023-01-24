@@ -1,11 +1,11 @@
 <main class="bg-first">
-  <div class="main-container container-xl h-100">
+  <div class="main-container container-xl">
     <div class="d-flex flex-column justify-content-center align-items-center m-auto">
       <h1 class="text-center my-3">Create Employee</h1>
       <p class="text-center">Create a new employee typing in the input's form.</p>
-      <%= link_to "Return", "/user/", class: "btn btn-primary p-2 roundend" %>
+      <%= link_to "Return", "/user/", class: "btn btn-outline-dark" %>
     </div>
-    <div class="m-auto">
+    <div class="m-auto p-4 rounded shadow bg-light align-items-center ">
       <%= render 'form', user: @user %>
     </div>
   </div>

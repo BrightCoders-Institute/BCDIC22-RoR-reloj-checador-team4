@@ -1,4 +1,4 @@
-<%= form_with class: 'row bg-primary rounded m-4 mx-md-0', model: @user do |form| %>
+<%= form_with class: 'row', model: @user do |form| %>
   <div class="my-3 d-flex flex-column col-md-6">
     <%= form.label :name, class: 'form-label' %><br>
     <%= form.text_field :name, class: 'form-control' %>
@@ -30,6 +30,6 @@
   </div>
 
   <div class="my-3 d-flex flex-column">
-    <%= form.submit class: 'btn btn-secondary fs-5'%>
+    <%= form.submit class: 'btn btn-outline-dark'%>
   </div>
 <% end %>
