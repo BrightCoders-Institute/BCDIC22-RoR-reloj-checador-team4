@@ -14,9 +14,20 @@
     <header class="bg-dark p-3 d-flex text-light header-container">
       <div class="d-flex justify-content-between align-items-center container-xl">
         <a class="text-dark" href="">
-          <%= image_tag("logo.png", alt: "admin image", class: 'rounded logo') %>
+          <%= image_tag("logof.png", alt: "admin image", class: 'rounded logo') %>
         </a>
-        <a class="btn btn-outline-light" href="/login/new">Login</a>
+            <% if current_page?(root_path) %>
+              <div>
+                <a class="btn btn-outline-light" href="/login/new">Login Admin</a>
+              </div>
+            <% elsif current_page?(new_login_path) %>
+              <a class="btn btn-outline-light" href="/">Clock Checker</a>
+              <% else %>
+              <div>
+              <a class="btn btn-outline-light" href="/home">Home Page</a>
+              <a class="btn btn-outline-light" href="/">Log Out</a>
+              </div>
+            <% end %>
       </div>
       <br>
     </header>

@@ -1,25 +1,27 @@
-<main class="container-xl">
-  <h1 class="display-3 fw-bold text-center mt-3">
-    Admin Portal
-  </h1>
-  <div class="row min-height-main align-items-center">
-    <div class="col-md-4 border">
-      <a class="text-decoration-none text-dark" href="/user">
-        <%= image_tag("employee.png", alt: "employee image", class: 'img-fluid') %>
-        <p class="text-center display-6">Manange Employees</p>
-      </a>
-    </div>
-    <div class="col-md-4 border">
-      <a class="text-decoration-none text-dark" href="/company">
-        <%= image_tag("company.png", alt: "company image", class: 'img-fluid') %>
-        <p class="text-center display-6">Manange Companies</p>
-      </a>
-    </div>
-    <div class="col-md-4 border">
-      <a class="text-decoration-none text-dark" href="/reports">
-        <%= image_tag("reports.png", alt: "reports image", class: 'img-fluid') %>
-        <p class="text-center display-6">Manange Reports</p>
-      </a>
+<main class="bg-first d-flex justify-content-center align-items-center">
+  <div class="container-xl">
+    <h1 class="display-3 fw-bold text-center mb-5 pt-3">
+      Admin Portal
+    </h1>
+    <div class="d-md-flex justify-content-between align-items-center mx-5 mx-md-0">
+      <div class="col-md-3 border p-4">
+        <a class="text-decoration-none text-dark" href="/users">
+          <%= image_tag("employee.png", alt: "employee image", class: 'img-fluid') %>
+          <p class="text-center display-6">Manage Employees</p>
+        </a>
+      </div>
+      <div class="col-md-3 border p-4">
+        <a class="text-decoration-none text-dark" href="/companies">
+          <%= image_tag("company.png", alt: "company image", class: 'img-fluid') %>
+          <p class="text-center display-6">Manage Companies</p>
+        </a>
+      </div>
+      <div class="col-md-3 border p-4">
+        <a class="text-decoration-none text-dark" href="/reports">
+          <%= image_tag("reports.png", alt: "reports image", class: 'img-fluid') %>
+          <p class="text-center display-6">Manage Reports</p>
+        </a>
+      </div>
     </div>
   </div>
 </main>

@@ -1,0 +1,5 @@
+    <% if current_page?(root_path) || current_page?(new_login_path) %>
+      <%= render 'layouts/headerroot' %>
+    <% else %>
+      <%= render 'layouts/headeradmin' %>
+    <% end %>
