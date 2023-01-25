@@ -14,13 +14,13 @@ Rails.application.routes.draw do
   resources :home, only: [:index]
 
   # De ahora en adelante, las urls serán '/user'
-  resources :user 
+  resources :users
 
-   # De ahora en adelante, las urls serán '/company'
-   resources :company
+  # De ahora en adelante, las urls serán '/company'
+  resources :companies
 
-   # De ahora en adelante, las urls serán '/reports'
-   resources :reports, only: [:index]
+  # De ahora en adelante, las urls serán '/reports'
+  resources :reports, only: [:index]
   get '/reports/month', to: 'reports#monthly'
   get '/reports/day', to: 'reports#daily'
   get '/reports/month/absence', to: 'reports#absenceMonth'
