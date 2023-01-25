@@ -1,4 +1,4 @@
-<%= form_with model: @company do |form| %>
+<%= form_with class: 'row', model: @company do |form| %>
   <div class="my-3 d-flex flex-column">
     <%= form.label :name, class: 'form-label' %>
     <%= form.text_field :name, class: 'form-control', placeholder: "Company's Name"%>
@@ -6,10 +6,10 @@
 
   <div class="my-3 d-flex flex-column">
     <%= form.label :address, class: 'form-label' %>
-    <%= form.password_field :address, class: 'form-control', placeholder: "Company's Address" %>
+    <%= form.text_field :address, class: 'form-control', placeholder: "Company's Address" %>
   </div>
 
   <div class="my-3 d-flex justify-content-center">
-    <%= form.submit class: 'btn btn-secondary fs-5'%>
+    <%= form.submit class: 'btn btn-outline-dark'%>
   </div>
 <% end %>
