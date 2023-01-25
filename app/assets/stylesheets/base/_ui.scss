@@ -7,11 +7,11 @@
 }
 
 .header-container, .footer-container{
-  height: 7vh;
+  min-height: 60px;
 }
 
 .bg-first{
-  height: 86vh;
+  min-height: 86vh;
   background-color: #e2e2e0;
   @include media-breakpoint-up(md){
     height: 86vh;
