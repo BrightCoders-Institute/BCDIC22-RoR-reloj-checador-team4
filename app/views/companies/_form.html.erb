@@ -2,11 +2,17 @@
   <div class="my-3 d-flex flex-column">
     <%= form.label :name, class: 'form-label' %>
     <%= form.text_field :name, class: 'form-control', placeholder: "Company's Name"%>
+    <% @company.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
 
   <div class="my-3 d-flex flex-column">
     <%= form.label :address, class: 'form-label' %>
     <%= form.text_field :address, class: 'form-control', placeholder: "Company's Address" %>
+    <% @company.errors.full_messages_for(:address).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
 
   <div class="my-3 d-flex justify-content-center">

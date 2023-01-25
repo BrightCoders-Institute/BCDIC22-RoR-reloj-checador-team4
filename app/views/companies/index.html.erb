@@ -1,0 +1,35 @@
+<main class="bg-first">
+  <div class="container-xl">
+    <div class="text-center pt-4">
+      <h1>Manage Companies</h1>
+      <p>Create, read, update and delete companies.</p>
+    </div>
+
+    <div>
+      <%= link_to "Create company", "/companies/new", class: 'btn btn-outline-dark  my-3' %>
+      <div class = "table-responsive shadow">
+        <table class="table border-bottom border-dark w-100 text-center mt-4 table-hover">
+          <tr class="">
+            <th>ID</th>
+            <th>NAME</th>
+            <th>ADDRESS</th>
+            <th>EDIT</th>
+            <th>DEMOLISH</th>
+          </tr>
+          <% @companies.each do |company|  %>
+            <tr>
+              <td><%= company.id %></td>
+              <td><%= company.name %></td>
+              <td><%= company.address %></td>
+              <td><%= link_to "Edit", edit_company_path(company.id), class: 'btn btn-outline-dark' %></td>
+              <td><%= link_to "Demolish", company_path(company), class: 'btn btn-outline-dark', data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
