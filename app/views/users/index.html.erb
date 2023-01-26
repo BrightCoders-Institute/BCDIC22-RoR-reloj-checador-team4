@@ -1,0 +1,45 @@
+<main class="bg-first">
+  <div class="container-xl">
+    <div class="text-center pt-4">
+      <h1>Manage Employees</h1>
+      <p>Create, read, update user and sleep employee</p>
+    </div>
+
+    <div class = "">
+      <%= link_to "Create user", "/users/new", class: 'btn btn-outline-dark shadow my-3' %>
+      <div class = "table-responsive shadow" >
+        <table class="table border-bottom border-dark w-100 text-center mt-4 table-hover">
+          <tr class="">
+            <th class = "">ID</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>POSITION</th>
+            <th>EMPLOYEE NUMBER</th>
+            <th>PRIVATE NUMBER</th>
+            <th>COMPANY</th>
+            <th>STATUS</th>
+            <th>EDIT</th>
+            <th>SLEEP</th>
+          </tr>
+          <% @users.each do |user|  %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.position %></td>
+            <td><%= user.emp_num %></td>
+            <td><%= user.private_num %></td>
+            <td><%= user.company.name %></td>
+            <td><%= "#{user.status == '0' ? "Inactive" : 'Active'}" %></td>
+            <td><%= link_to "Edit", edit_user_path(user.id), class: 'btn btn-outline-dark' %></td>
+            <td><%= link_to "#{user.status == '1' ? "Sleep" : 'Activate'}", user_path(user), class: 'btn btn-outline-dark', data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
