@@ -1,0 +1,61 @@
+<%= form_with class: 'row', model: @user do |form| %>
+  <div class="my-3 d-flex flex-column col-md-6">
+    <%= form.label :name, class: 'form-label' %><br>
+    <%= form.text_field :name, class: 'form-control' %>
+    <% @user.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="my-3 d-flex flex-column col-md-6">
+    <%= form.label :email, class: 'form-label' %><br>
+    <%= form.email_field :email, class: 'form-control' %>
+    <% @user.errors.full_messages_for(:email).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="my-3 d-flex flex-column col-md-6">
+    <%= form.label :position, class: 'form-label' %><br>
+    <%= form.text_field :position, class: 'form-control' %>
+    <% @user.errors.full_messages_for(:position).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="my-3 d-flex flex-column col-md-6">
+    <%= form.label :emp_num, class: 'form-label' %><br>
+    <%= form.number_field :emp_num, step: 1, class: 'form-control' %>
+    <% @user.errors.full_messages_for(:emp_num).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="my-3 d-flex flex-column col-md-6">
+    <%= form.label :private_num, class: 'form-label' %><br>
+    <%= form.text_field :private_num, step: 1, class: 'form-control' %>
+    <% @user.errors.full_messages_for(:private_num).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="my-3 d-flex flex-column col-md-6">
+    <%= form.label :company_id, class: 'form-label' %><br>
+    <%= form.select :company_id, Company.all.collect {|p| [p.name, p.id]}, include_blank: true, class: "form-select" %>
+    <% @user.errors.full_messages_for(:company_id).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="my-3 d-flex flex-column col-md-6">
+    <%= form.label :status, class: 'form-label' %><br>
+    <%= form.select :status, [['Active', 1], ['Inactive', 0]], include_blank: true, class: "form-select"%>
+    <% @user.errors.full_messages_for(:status).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="my-3 d-flex flex-column">
+    <%= form.submit class: 'btn btn-outline-dark'%>
+  </div>
+<% end %>
