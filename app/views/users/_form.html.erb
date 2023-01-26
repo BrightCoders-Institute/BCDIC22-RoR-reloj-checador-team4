@@ -33,7 +33,7 @@
 
   <div class="my-3 d-flex flex-column col-md-6">
     <%= form.label :private_num, class: 'form-label' %><br>
-    <%= form.text_field :private_num, step: 1, class: 'form-control' %>
+    <%= form.password_field :private_num, value: @user.private_num, step: 1, class: 'form-control' %>
     <% @user.errors.full_messages_for(:private_num).each do |message| %>
       <div><%= message %></div>
     <% end %>
