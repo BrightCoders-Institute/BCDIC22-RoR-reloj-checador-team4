@@ -32,8 +32,8 @@
             <td><%= user.company.name %></td>
             <td><%= user.status %></td>
             <td><%= link_to "Edit", edit_user_path(user.id), class: 'btn btn-outline-dark' %></td>
-            <td><%= link_to "Sleep", user_path(user), class: 'btn btn-outline-dark', data: {
-                    turbo_method: :sleep,
+            <td><%= link_to "#{user.status == '1' ? "Sleep" : 'Activate'}", user_path(user), class: 'btn btn-outline-dark', data: {
+                    turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %></td>
           </tr>

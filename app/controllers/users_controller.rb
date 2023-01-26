@@ -19,14 +19,14 @@ class UsersController < ApplicationController
   def show
   end
   
-  def sleep
+  def destroy
     @user = User.find(params[:id])
-    if @user.update(user_params)
-      @user.update(status: 0)
-      redirect_to users_path
+    if @user.status == '1'
+      @user.update(status: '0')
     else
-      render :new, status: :unprocessable_entity
+      @user.update(status: '1')
     end
+    redirect_to users_path
   end
 
   def edit
