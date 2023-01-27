@@ -9,7 +9,6 @@ class ChecksController < ApplicationController
   def create
     @user = User.find_by(user_params)
     
-
     if @user.nil?
       flash[:notice] = 'Wrong number or password'
     else
@@ -17,7 +16,7 @@ class ChecksController < ApplicationController
       @todayCheck = Check.find_by(date: Date.today, user_id: @user.id)
       if @check.check == '1'
         if @todayCheck
-          flash[:notice] = 'usted ya hizo check hoy'
+          flash[:notice] = 'You already checked in today'
         else
           @check.user_id = @user.id
           @check.date = Date.today
@@ -29,7 +28,7 @@ class ChecksController < ApplicationController
           @todayCheck.update(check: '2')
           flash[:notice] = 'Successfully check out'
         else
-          flash[:notice] = 'No ha hecho check in'
+          flash[:notice] = 'You have not checked in'
         end
       end
     end
