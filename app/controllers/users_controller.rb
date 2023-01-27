@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
   def show
   end
-  
+
   def destroy
     @user = User.find(params[:id])
     if @user.status == '1'
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     end
   end
 
-  private 
+  private
   def user_params
     params.require(:user).permit(:name, :email, :position, :private_num, :emp_num, :status, :company_id)
   end
