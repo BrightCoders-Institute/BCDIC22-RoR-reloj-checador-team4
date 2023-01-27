@@ -15,8 +15,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_26_230921) do
   enable_extension "plpgsql"
 
   create_table "checks", force: :cascade do |t|
-    t.string "check"
     t.bigint "user_id"
+    t.string "check"
+    t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_checks_on_user_id"
@@ -42,4 +43,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_26_230921) do
     t.index ["company_id"], name: "index_users_on_company_id"
   end
 
+  add_foreign_key "checks", "users"
 end

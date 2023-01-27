@@ -6,16 +6,20 @@
         <span id='min'></span><span class='red-dot'>:</span>
         <span id='second'></span>
       </div>
-      <span id='titulo'></span>
     </div>
     <div class="mx-5 m-md-auto py-5 py-md-0">
       <div class="p-4 rounded shadow bg-light align-items-center ">
         <h1 class="display-3 text-center fw-bold">Clock Checker</h1>
         <%= render "form", check: @check %>
+        <div class="text-center">
+          <% flash.each do |key, value| %>
+            <div>
+              <%= value %>
+            </div>
+          <% end %>
+        </div>
       </div>
-      
-
-
     </div>
   </div>
+  
 </main>

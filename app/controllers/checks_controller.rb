@@ -1,23 +1,40 @@
+# frozen_string_literal: true
+
+# Controller for validating the check
 class ChecksController < ApplicationController
   def index
-  end
-
-  def update
-  end
-
-  def new
-    @check = Check.new
+    nil
   end
 
   def create
     @user = User.find_by(user_params)
-    unless @user.nil?
-      flash[:alert] = "Si"
-      # @check = @user.checks.new(check_params.merge)
-    else  
-      flash[:alert] = "Error"
+    
+
+    if @user.nil?
+      flash[:notice] = 'Wrong number or password'
+    else
+      @check = Check.new(check_params)
+      @todayCheck = Check.find_by(date: Date.today, user_id: @user.id)
+      if @check.check == '1'
+        if @todayCheck
+          flash[:notice] = 'usted ya hizo check hoy'
+        else
+          @check.user_id = @user.id
+          @check.date = Date.today
+          @check.save
+          flash[:notice] = 'Successfully check in'
+        end
+      elsif @check.check == '2'
+        if @todayCheck
+          @todayCheck.update(check: '2')
+          flash[:notice] = 'Successfully check out'
+        else
+          flash[:notice] = 'No ha hecho check in'
+        end
+      end
     end
-    redirect_back(fallback_location: checks_path)
+
+    redirect_back(fallback_location: root_path)
   end
 
   private
