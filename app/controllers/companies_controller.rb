@@ -28,7 +28,7 @@ class CompaniesController < ApplicationController
     if @company.update(company_params)
       redirect_to companies_path
     else
-      render :new, status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 

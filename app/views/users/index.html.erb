@@ -29,7 +29,7 @@
             <td><%= user.position %></td>
             <td><%= user.emp_num %></td>
             <td><%= user.private_num %></td>
-            <td><%= user.company.name %></td>
+            <td><%= "#{user.company == nil ? "Sin Compañia": user.company.name }" %></td>
             <td><%= "#{user.status == '0' ? "Inactive" : 'Active'}" %></td>
             <td><%= link_to "Edit", edit_user_path(user.id), class: 'btn btn-outline-dark' %></td>
             <td><%= link_to "#{user.status == '1' ? "Sleep" : 'Activate'}", user_path(user), class: 'btn btn-outline-dark', data: {
