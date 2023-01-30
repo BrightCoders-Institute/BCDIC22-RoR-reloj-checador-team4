@@ -1,0 +1,24 @@
+<%= form_with url: checks_path, method: :post, class: 'justify-content-center text-dark' do |form| %>
+  <div class="my-3 d-flex flex-column">
+    <%= form.label :emp_num, "ID", class: 'form-label' %>
+    <%= form.text_field :emp_num, class: 'form-control'%>
+  </div>
+
+  <div class="my-3 d-flex flex-column">
+    <%= form.label :private_num, 'Password', class: 'form-label' %>
+    <%= form.password_field :private_num, class: 'form-control' %>
+  </div>
+
+  <div class="my-3 d-flex flex justify-content-evenly form-check py-3">
+    <div>
+      <%= form.radio_button :check, 1 ,class: 'form-check-input'%> Check In
+    </div>
+    <div>
+      <%= form.radio_button :check, 2 ,class: 'form-check-input'%> Check Out
+    </div>
+  </div>
+
+  <div class="my-3 d-flex justify-content-center">
+    <%= form.submit 'Check', class: 'btn btn-outline-dark' %>
+  </div>
+<% end %>

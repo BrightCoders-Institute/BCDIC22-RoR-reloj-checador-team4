@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   belongs_to :company
+  has_many :checks
   validates :name, presence: true, length: {minimum: 10}
   validates :email, presence: true, format: /\w+@\w+\.{1}[a-zA-Z]{2,}/
   validates :position, presence: true, length: {minimum: 10}
