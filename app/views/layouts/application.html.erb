@@ -16,18 +16,7 @@
         <a class="text-dark" href="">
           <%= image_tag("logof.png", alt: "admin image", class: 'rounded logo') %>
         </a>
-            <% if current_page?(root_path) %>
-              <div>
-                <a class="btn btn-outline-light" href="/login/new">Login Admin</a>
-              </div>
-            <% elsif current_page?(new_login_path) %>
-              <a class="btn btn-outline-light" href="/">Clock Checker</a>
-              <% else %>
-              <div>
-              <a class="btn btn-outline-light" href="/home">Home Page</a>
-              <a class="btn btn-outline-light" href="/">Log Out</a>
-              </div>
-            <% end %>
+        <%= render 'layouts/nav' %>
       </div>
       <br>
     </header>

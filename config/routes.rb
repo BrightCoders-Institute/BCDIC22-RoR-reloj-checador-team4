@@ -1,21 +1,15 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
+  devise_for :admins
   # De ahora en adelante, las urls serán '/check'
   root 'checks#index'
   resources :checks, only: [:create,:update]
-
-  # De ahora en adelante, las urls serán '/login'
-  resources :login, only: [:create,:new]
-
   # De ahora en adelante, las urls serán '/home'
   resources :home, only: [:index]
 
   # De ahora en adelante, las urls serán '/user'
   resources :users
-
   # De ahora en adelante, las urls serán '/company'
   resources :companies
 
@@ -27,4 +21,3 @@ Rails.application.routes.draw do
   get '/reports/day/absence', to: 'reports#absenceDay'
 end
 
-#bin/rails generate controller Reports index --skip-routes
