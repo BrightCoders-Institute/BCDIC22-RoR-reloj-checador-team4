@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  devise_for :admins
+  devise_for :admins, controllers: {
+    sessions: 'admins/sessions'
+  }
+  
   # De ahora en adelante, las urls serán '/check'
   root 'checks#index'
   resources :checks, only: [:create,:update]
@@ -20,4 +23,3 @@ Rails.application.routes.draw do
   get '/reports/month/absence', to: 'reports#absenceMonth'
   get '/reports/day/absence', to: 'reports#absenceDay'
 end
-
