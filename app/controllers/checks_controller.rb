@@ -9,30 +9,32 @@ class ChecksController < ApplicationController
   def create
     @user = User.find_by(user_params)
     if @user.nil?
-      flash[:notice] = Date.hour
+      flash[:msg] = 'User not found'
     else
       if @user.status == "1"
         @check = Check.new(check_params)
         @todayCheck = Check.find_by(date: Date.today, user_id: @user.id)
         if @check.check == '1'
           if @todayCheck
-            flash[:notice] = 'You already checked in today'
+            flash[:msg] = 'You already checked in today'
           else
             @check.user_id = @user.id
             @check.date = Date.today
             @check.save
-            flash[:notice] = 'Successfully check in'
+            flash[:msg] = 'Successfully check in'
           end
         elsif @check.check == '2'
           if @todayCheck
             @todayCheck.update(check: '2')
-            flash[:notice] = 'Successfully check out'
+            flash[:msg] = 'Successfully check out'
           else
-            flash[:notice] = 'You have not checked in'
+            flash[:msg] = 'You have not checked in'
           end
+        else
+          flash[:msg] = 'You missed select an option'
         end
       else
-        flash[:notice] = 'User Sleep'
+        flash[:msg] = 'User Sleep'
       end
     end
     redirect_back(fallback_location: root_path)

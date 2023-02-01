@@ -1,0 +1,15 @@
+<% if admin_signed_in? %>
+  <div class="d-flex justify-content-between">
+    <a class="btn btn-outline-light me-2" href="/home">Home Page</a>
+    <%= button_to "Sign out", destroy_admin_session_path, method: :delete, class: 'btn btn-outline-light' %>
+  </div>
+<% else %>
+  <% if current_page?(root_path) %>
+    <div>
+      <a class="btn btn-outline-light" href="/admins/sign_in">Login Admin</a>
+    </div>
+  <% else %>
+    <a class="btn btn-outline-light" href="/">Clock Checker</a>
+  <% end %>
+
+<% end %>
