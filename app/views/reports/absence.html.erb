@@ -1,0 +1,30 @@
+<main class="bg-first d-flex justify-content-center align-items-start">
+  <div class="container-xl">
+  <div class="d-flex justify-content-between align-items-center">
+    <h1 class="display-4 fw-bold text-center mb-5 pt-3">
+      Absence
+    </h1>
+    <%= link_to "Return", "/reports/", class: "btn btn-outline-dark shadow" %>
+  </div>
+    <table class="table border-bottom border-dark w-100 text-center mt-4 table-hover">
+          <tr class="">
+            <th>ID</th>
+            <th>NAME</th>
+            <th>CHECKS</th>
+            <th>EDIT</th>
+            <th>DEMOLISH</th>
+          </tr>
+          <% @users.each do |user|  %>
+            <tr>
+              <td><%= user.id %></td>
+              <td><%= user.name %></td>
+              <% user.checks.each do |check|  %>
+              <td>
+                <td><%= check.date %></td>
+              </td>
+            <% end %>
+            </tr>
+          <% end %>
+        </table>
+  </div>
+</main>
