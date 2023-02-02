@@ -14,6 +14,6 @@ class ReportsController < ApplicationController
   end
 
   def absence
-    @users = User.all
+    @users = User.order(:id)
   end
 end
