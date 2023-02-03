@@ -6,21 +6,18 @@
       </h1>
       <%= link_to "Return", "/reports/", class: "btn btn-outline-dark shadow" %>
     </div>
-    <div class="row justify-content-between align-items center">
-
-    <div class="col-md-5">
-      <p>Check in</p>
-      <p>Average <%= @avgin_hour %> hrs</p>
-      <%= column_chart Check.group_by_day_of_week(:created_at, format: "%A").count %>
-    </div>
-
-    <div class="col-md-5">
-      <p>Check out</p>
-      <p>Average <%= @avgout_hour %> hrs</p>
-      <%= column_chart Check.where(check: '2').group_by_day_of_week(:created_at, format: "%A").count %>
-    </div>
-  
-    </div>
     
+    <div class="row justify-content-between align-items center">
+      <div class="col-md-5">
+        <p>Check in</p>
+        <p>Average <%= @avgin_hour %> hrs</p>
+        <%= column_chart Check.group_by_day_of_week(:created_at, format: "%A").count %>
+      </div>
+      <div class="col-md-5">
+        <p>Check out</p>
+        <p>Average <%= @avgout_hour %> hrs</p>
+        <%= column_chart Check.where(check: '2').group_by_day_of_week(:created_at, format: "%A").count %>
+      </div>
+    </div>
   </div>
 </main>

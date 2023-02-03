@@ -7,18 +7,14 @@
       <%= link_to "Return", "/reports/", class: "btn btn-outline-dark shadow" %>
     </div>
     <div class="row justify-content-between align-items center">
-
-    <div class="col-md-5">
-      <p>Check in</p>
-      <%= column_chart Check.group_by_month(:created_at, format: "%Y-%B").count %>
+      <div class="col-md-5">
+        <p>Check in</p>
+        <%= column_chart Check.group_by_month(:created_at, format: "%Y-%B").count %>
+      </div>
+      <div class="col-md-5">
+        <p>Check out</p>
+        <%= column_chart Check.where(check: '2').group_by_month(:created_at, format: "%Y-%B").count %>
+      </div>
     </div>
-
-    <div class="col-md-5">
-      <p>Check out</p>
-      <%= column_chart Check.where(check: '2').group_by_month(:created_at, format: "%Y-%B").count %>
-    </div>
-  
-    </div>
-
   </div>
 </main>

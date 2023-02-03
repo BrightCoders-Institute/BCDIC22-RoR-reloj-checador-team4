@@ -8,32 +8,31 @@
   </div>
   <h2 class="">First day - today</h2>
     <table class="table border-bottom border-dark w-100 text-center mt-4 table-hover">
-          <tr class="">
-            <th>ID</th>
-            <th>NAME</th>
-            <th>DAYS WITH CHECK</th>
-            <th>DAYS WITHOUT CHECK</th>
-          </tr>
-          <% @users.each do |user|  %>
-            <% result = (user.checks.group_by_day(:created_at, range: user.checks.minimum(:created_at)..Time.now).count)%>
-            <% daysYes = result.select { |k, v| v==1 }.keys %>
-            <% daysNo = result.select { |k, v| v==0 }.keys %>
-            <tr>
-              <td><%= user.id %></td>
-              <td><%= user.name %></td>
-              <td>
-              <% daysYes.each do |d| %>
-                <%= simple_format "#{d.strftime('%B / %d / %Y ')} \n" %>
-                <% end %>
-              </td>
-              
-              <td>
-              <% daysNo.each do |d| %>
-                <%= simple_format "#{d.strftime('%B / %d / %Y ')} \n" %>
-                <% end %>
-              </td>
-            </tr>
-          <% end %>
-        </table>
+      <tr class="">
+        <th>ID</th>
+        <th>NAME</th>
+        <th>DAYS WITH CHECK</th>
+        <th>DAYS WITHOUT CHECK</th>
+      </tr>
+      <% @users.each do |user|  %>
+        <% result = (user.checks.group_by_day(:created_at, range: user.checks.minimum(:created_at)..Time.now).count)%>
+        <% daysYes = result.select { |k, v| v==1 }.keys %>
+        <% daysNo = result.select { |k, v| v==0 }.keys %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.name %></td>
+          <td>
+            <% daysYes.each do |d| %>
+              <%= simple_format "#{d.strftime('%B / %d / %Y ')} \n" %>
+            <% end %>
+          </td>
+          <td>
+            <% daysNo.each do |d| %>
+              <%= simple_format "#{d.strftime('%B / %d / %Y ')} \n" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
   </div>
 </main>
