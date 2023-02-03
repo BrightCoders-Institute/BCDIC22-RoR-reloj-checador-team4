@@ -20,6 +20,5 @@ Rails.application.routes.draw do
   resources :reports, only: [:index]
   get '/reports/month', to: 'reports#monthly'
   get '/reports/day', to: 'reports#daily'
-  get '/reports/month/absence', to: 'reports#absenceMonth'
-  get '/reports/day/absence', to: 'reports#absenceDay'
+  get '/reports/absence', to: 'reports#absence'
 end

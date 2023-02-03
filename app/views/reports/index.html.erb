@@ -1,8 +1,27 @@
-<main>
-  <!-- This is the main container-->
-  <h1>Reports</h1>
-  <button>Daily Report</button>
-  <button>Monthly Report</button>
-  <button>Absences Report</button>
-  <div> <!-- Data about the reports --> </div>
+<main class="bg-first d-flex justify-content-center align-items-center">
+  <div class="container-xl">
+    <h1 class="display-3 fw-bold text-center mb-5 pt-3">
+      Reports
+    </h1>
+    <div class="d-md-flex justify-content-between align-items-center mx-5 mx-md-0">
+      <div class="col-md-3 border p-4">
+        <a class="text-decoration-none text-dark" href="/reports/day">
+          <%= image_tag("employee.png", alt: "employee image", class: 'img-fluid') %>
+          <p class="text-center display-6">Daily</p>
+        </a>
+      </div>
+      <div class="col-md-3 border p-4">
+        <a class="text-decoration-none text-dark" href="/reports/month">
+          <%= image_tag("company.png", alt: "company image", class: 'img-fluid') %>
+          <p class="text-center display-6">Month</p>
+        </a>
+      </div>
+      <div class="col-md-3 border p-4">
+        <a class="text-decoration-none text-dark" href="/reports/absence">
+          <%= image_tag("reports.png", alt: "reports image", class: 'img-fluid') %>
+          <p class="text-center display-6">Absence</p>
+        </a>
+      </div>
+    </div>
+  </div>
 </main>

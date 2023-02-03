@@ -1,0 +1,38 @@
+<main class="bg-first d-flex justify-content-center align-items-start">
+  <div class="container-xl">
+  <div class="d-flex justify-content-between align-items-center">
+    <h1 class="display-4 fw-bold text-center mb-5 pt-3">
+      Absences 
+    </h1>
+    <%= link_to "Return", "/reports/", class: "btn btn-outline-dark shadow" %>
+  </div>
+  <h2 class="">First day - today</h2>
+    <table class="table border-bottom border-dark w-100 text-center mt-4 table-hover">
+      <tr class="">
+        <th>ID</th>
+        <th>NAME</th>
+        <th>DAYS WITH CHECK</th>
+        <th>DAYS WITHOUT CHECK</th>
+      </tr>
+      <% @users.each do |user|  %>
+        <% result = (user.checks.group_by_day(:created_at, range: user.checks.minimum(:created_at)..Time.now).count)%>
+        <% daysYes = result.select { |k, v| v==1 }.keys %>
+        <% daysNo = result.select { |k, v| v==0 }.keys %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.name %></td>
+          <td>
+            <% daysYes.each do |d| %>
+              <%= simple_format "#{d.strftime('%B / %d / %Y ')} \n" %>
+            <% end %>
+          </td>
+          <td>
+            <% daysNo.each do |d| %>
+              <%= simple_format "#{d.strftime('%B / %d / %Y ')} \n" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</main>
