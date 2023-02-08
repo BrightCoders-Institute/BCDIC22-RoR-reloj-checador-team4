@@ -19,3 +19,4 @@ Co-authored-by: Yaxkin121 <ycardenas13@ucol.mx>
 Co-authored-by: MaxRetana <maxretana981@gmail.com>
 Co-authored-by: Reiyirak <pdsmej@gmail.com>
 - Badges
+Si lees esto, agrega un emoji a tu CR, gracias.

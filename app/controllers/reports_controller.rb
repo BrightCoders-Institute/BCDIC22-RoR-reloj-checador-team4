@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
+# Class ReportsController
 class ReportsController < ApplicationController
   before_action :authenticate_admin!
-  def index
-  end
+  def index; end
 
-  def monthly
-  end
+  def monthly; end
 
   def daily
     @hours_in = Check.all.map { |record| record.created_at.hour }

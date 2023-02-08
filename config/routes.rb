@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   devise_for :admins, controllers: {
     sessions: 'admins/sessions'
   }
-  
+
   # De ahora en adelante, las urls serán '/check'
   root 'checks#index'
-  resources :checks, only: [:create,:update]
+  resources :checks, only: %i[create update]
   # De ahora en adelante, las urls serán '/home'
   resources :home, only: [:index]
 

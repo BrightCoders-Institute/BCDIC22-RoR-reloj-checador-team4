@@ -23,8 +23,9 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 development:
   <<: *default
-  database: app_development
-  username: #postgres_usermane
+  database: railway
+  hots: containers-us-west-125.railway.app
+  port: 7210
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -51,8 +52,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: app_test
-  username: #postgres_usermane
+  database: railwayapp_test
+  # username: #postgres_usermane
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -74,6 +75,7 @@ test:
 #
 production:
   <<: *default
-  database: app_production
-  username: #postgres_usermane
-  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+  url: <%= ENV["DATABASE_URL"] %>
+  database: railwayapp_production
+  username: railwayapp
+  password: <%= ENV["RAILWAYAPP_DATABASE_PASSWORD"] %>

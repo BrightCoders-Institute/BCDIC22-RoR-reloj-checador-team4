@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Class TurboFailureApp
 class TurboFailureApp < Devise::FailureApp
   def respond
     if request_format == :turbo_stream
@@ -300,7 +301,7 @@ Devise.setup do |config|
 
   config.warden do |manager|
     manager.failure_app = TurboFailureApp
-  end 
+  end
 
   # ==> Mountable engine configurations
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine
