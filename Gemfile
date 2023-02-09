@@ -81,3 +81,5 @@ end
 gem 'chartkick', '~> 5.0'
 
 gem 'groupdate', '~> 6.2'
+
+gem "sandi_meter", "~> 1.2"
