@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Class CompaniesController
 class CompaniesController < ApplicationController
   before_action :authenticate_admin!
   def index
@@ -17,8 +20,7 @@ class CompaniesController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
   def edit
     @company = Company.find(params[:id])
@@ -39,7 +41,8 @@ class CompaniesController < ApplicationController
     redirect_to companies_path, status: :see_other
   end
 
-  private 
+  private
+
   def company_params
     params.require(:company).permit(:name, :address)
   end

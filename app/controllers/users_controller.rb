@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Class UserController
 class UsersController < ApplicationController
   before_action :authenticate_admin!
   def index
@@ -17,8 +20,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
   def destroy
     @user = User.find(params[:id])
@@ -44,6 +46,7 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user_params
     params.require(:user).permit(:name, :email, :position, :private_num, :emp_num, :status, :company_id)
   end
